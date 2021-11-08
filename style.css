@@ -52,7 +52,7 @@ li a span{
     padding: 0.5em;
 }
 
-.input, .start{
+.container{
     text-align: center;
     padding-top: 10em;
 }
@@ -62,12 +62,12 @@ li a span{
     opacity: 0.5;
 }
 
-.input p{
+.container p{
     padding: 2em;
     font-size: larger;
 }
 
-.input input{
+.container input{
     border-radius: 10px;
     border: transparent;
     background-color: #0b424e;
@@ -75,7 +75,7 @@ li a span{
     width: 17vw;
 }
 
-.input button{
+.container button{
     color: #51C4D3;
     border-radius: 10px;
     border: transparent;
@@ -84,6 +84,10 @@ li a span{
     width: 70px;
 }
 
-.input button:hover{
+.container button:hover{
     cursor: pointer;
+}
+
+.container .input{
+    width: 50vw;
 }
