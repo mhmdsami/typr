@@ -44,32 +44,44 @@ nav li a:hover{
     font-weight: bold;
 }
 
-.input{
+li a span{
+    color: #51C4D3;
+    font-weight: bold;
+    background-color: #0b424e;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+.input, .start{
     text-align: center;
     padding-top: 10em;
 }
 
-.input p{
-    padding-bottom: 1em;
-    text-transform: capitalize;
-    font-size: larger;
+::placeholder{
     color: #51C4D3;
+    opacity: 0.5;
+}
+
+.input p{
+    padding: 2em;
+    font-size: larger;
 }
 
 .input input{
-    border-radius: 7px;
+    border-radius: 10px;
     border: transparent;
     background-color: #0b424e;
-    padding: 0.5em;
-    width: 12vw;
+    padding: 0.7em;
+    width: 17vw;
 }
 
 .input button{
-    border-radius: 7px;
+    color: #51C4D3;
+    border-radius: 10px;
     border: transparent;
     background-color: #0b424e;
-    padding: 0.5em;
-    width: 50px;
+    padding: 0.7em;
+    width: 70px;
 }
 
 .input button:hover{
