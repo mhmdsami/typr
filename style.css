@@ -62,7 +62,7 @@ li a span{
     opacity: 0.5;
 }
 
-.container p{
+.container div{
     padding: 2em;
     font-size: larger;
 }
@@ -71,7 +71,7 @@ li a span{
     border-radius: 10px;
     border: transparent;
     background-color: #0b424e;
-    padding: 0.7em;
+    padding: 0.8em;
     width: 17vw;
 }
 
@@ -80,7 +80,7 @@ li a span{
     border-radius: 10px;
     border: transparent;
     background-color: #0b424e;
-    padding: 0.7em;
+    padding: 0.8em;
     width: 70px;
 }
 
@@ -90,4 +90,13 @@ li a span{
 
 .container .input{
     width: 50vw;
+    max-width: 30%;
+}
+
+.words-container span{
+    display: inline-flex;
+    margin: 0.2em 0.2em;
+    padding: 0.4em;
+    background-color: #0b424e;
+    border-radius: 10px;
 }
