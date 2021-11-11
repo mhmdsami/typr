@@ -11,7 +11,7 @@ let interval = 0;
 
 const startTimer = () => {
     ++interval;
-}
+};
 
 const getWords = async (count) => {
     const res = await fetch(wordsAPI(count));
@@ -28,7 +28,7 @@ const getWords = async (count) => {
         wordLength += word.length;
     });
 
-    setInterval(startTimer, 1000);
+    let timer = setInterval(startTimer, 1000);
     wordInput.addEventListener("input", () => {
         words.forEach(word => {
             const focusedSpan = document.querySelector(".focused");
@@ -45,8 +45,8 @@ const getWords = async (count) => {
                 wordInput.addEventListener("keyup", event => {
                     if(event.code == "Space" || event.code == "Enter"){
                         wordInput.value = '';
-                        clearInterval(startTimer);
-                    wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
+                        clearInterval(timer);
+                        wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
                     }
                 });
             }
@@ -72,7 +72,7 @@ const getQuote = async () => {
         wordLength += word.length;
     });
 
-    setInterval(startTimer, 1000);
+    let timer = setInterval(startTimer, 1000);
     wordInput.addEventListener("input", () => {
         words.forEach(word => {
             const focusedSpan = document.querySelector(".focused");
@@ -89,8 +89,8 @@ const getQuote = async () => {
                 wordInput.addEventListener("keyup", event => {
                     if(event.code == "Space" || event.code == "Enter"){
                         wordInput.value = '';
-                        clearInterval(startTimer);
-                    wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
+                        clearInterval(timer);
+                        wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
                     }
                 });
             }
