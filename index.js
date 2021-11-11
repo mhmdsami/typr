@@ -30,9 +30,9 @@ const getWords = async (count) => {
 
     setInterval(startTimer, 1000);
     wordInput.addEventListener("input", () => {
-        words.forEach((word, index) => {
+        words.forEach((word) => {
+            const focusedSpan = document.querySelector(".focused");
             if(word == wordInput.value && word != words[words.length - 1]){
-                focusedSpan = document.querySelector(".focused");
                 focusedSpan.nextSibling.setAttribute("class", "focused");
                 focusedSpan.removeAttribute("class", "focused");
                 wordInput.addEventListener("keyup", event => {
@@ -41,12 +41,12 @@ const getWords = async (count) => {
                     }
                 });
             }else if(word == wordInput.value && word == words[words.length - 1]){
-                document.querySelector(".focused").removeAttribute("class", "focused");
+                focusedSpan.removeAttribute("class", "focused");
                 wordInput.addEventListener("keyup", event => {
                     if(event.code == "Space" || event.code == "Enter"){
                         wordInput.value = '';
                         clearInterval(startTimer);
-                    wordsContainer.innerText = `${wordLength * 60 / interval} WPM`;
+                    wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
                     }
                 });
             }
