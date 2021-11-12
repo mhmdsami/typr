@@ -43,7 +43,7 @@ const getWords = async count => {
                 focusedSpan.removeAttribute("class", "focused");
                 wordInput.value = null;
                 clearInterval(timer);
-                wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
+                wordsContainer.innerText = `${(words.length * 60 / interval).toFixed()} WPM`;
                 interval = 0;
                 i++;
             }
@@ -83,7 +83,7 @@ const getQuote = async () => {
                 focusedSpan.removeAttribute("class", "focused");
                 wordInput.value = null;
                 clearInterval(timer);
-                wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
+                wordsContainer.innerText = `${(words.length * 60 / interval).toFixed()} WPM`;
                 interval = 0;
                 i++;
             }
