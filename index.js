@@ -13,10 +13,10 @@ const startTimer = () => {
     ++interval;
 };
 
-const getWords = async (count) => {
+const getWords = async count => {
     const res = await fetch(wordsAPI(count));
     const words = await res.json();
-    wordsContainer.innerText = ""
+    wordsContainer.innerText = null;
     let wordLength = 0;
     words.forEach((word, index) => {
         const wordSpan = document.createElement("span");
@@ -52,8 +52,7 @@ const getQuote = async () => {
     const data = await res.json();
     const quote = data["content"];
     const words = quote.split(" ");
-    console.log(words);
-    wordsContainer.innerText = ''
+    wordsContainer.innerText = null;
     let wordLength = 0;
     words.forEach( (word, index) => {
         const wordSpan = document.createElement("span");
