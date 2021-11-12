@@ -35,20 +35,13 @@ const getWords = async (count) => {
             if(word == wordInput.value && word != words[words.length - 1]){
                 focusedSpan.nextSibling.setAttribute("class", "focused");
                 focusedSpan.removeAttribute("class", "focused");
-                wordInput.addEventListener("keyup", event => {
-                    if(event.code == "Space" && word != words[words.length - 1]){
-                        wordInput.value = '';
-                    }
-                });
+                wordInput.value = null;
             }else if(word == wordInput.value && word == words[words.length - 1]){
                 focusedSpan.removeAttribute("class", "focused");
-                wordInput.addEventListener("keyup", event => {
-                    if(event.code == "Space" || event.code == "Enter"){
-                        wordInput.value = '';
-                        clearInterval(timer);
-                        wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
-                    }
-                });
+                wordInput.value = null;
+                clearInterval(timer);
+                wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
+                interval = 0;
             }
         });
     });
@@ -79,20 +72,13 @@ const getQuote = async () => {
             if(word == wordInput.value && word != words[words.length - 1]){
                 focusedSpan.nextSibling.setAttribute("class", "focused");
                 focusedSpan.removeAttribute("class", "focused");
-                wordInput.addEventListener("keyup", event => {
-                    if(event.code == "Space" && word != words[words.length - 1]){
-                        wordInput.value = '';
-                    }
-                });
+                wordInput.value = null;
             }else if(word == wordInput.value && word == words[words.length - 1]){
                 focusedSpan.removeAttribute("class", "focused");
-                wordInput.addEventListener("keyup", event => {
-                    if(event.code == "Space" || event.code == "Enter"){
-                        wordInput.value = '';
-                        clearInterval(timer);
-                        wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
-                    }
-                });
+                wordInput.value = null;
+                clearInterval(timer);
+                wordsContainer.innerText = `${(wordLength * 60 / interval).toFixed()} WPM`;
+                interval = 0;
             }
         });
     });
