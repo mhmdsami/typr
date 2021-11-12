@@ -76,16 +76,21 @@ li a span{
 }
 
 .container button{
+    font-weight: bold;
     color: #51C4D3;
     border-radius: 10px;
     border: transparent;
     background-color: #0b424e;
     padding: 0.8em;
-    width: 70px;
+    width: 80px;
 }
 
 .container button:hover{
     cursor: pointer;
+}
+
+.container input:focus{
+    outline: none;
 }
 
 .container .input{
@@ -102,4 +107,10 @@ li a span{
 
 .focused{
     background-color: #0b424e;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

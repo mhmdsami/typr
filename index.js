@@ -85,8 +85,14 @@ const getQuote = async () => {
 
 
 if(wordStartBtn){
-    wordStartBtn.addEventListener("click", () => getWords(wordCount.value));
+    wordStartBtn.addEventListener("click", () => {
+        wordStartBtn.innerText = "Restart";
+        getWords(wordCount.value);
+    });
 }
 else{
-    quoteStartBtn.addEventListener("click", () => getQuote());
+    quoteStartBtn.addEventListener("click", () => {
+        quoteStartBtn.innerText = "Restart";
+        getQuote();
+    });
 }
