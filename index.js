@@ -31,23 +31,21 @@ const getWords = async count => {
     let timer = setInterval(startTimer, 1000);
     let i = 0;
     wordInput.addEventListener("input", () => {
-        words.forEach(() => {
-            let word = words[i];
-            const focusedSpan = document.querySelector(".focused");
-            if(word == wordInput.value && word != words[words.length - 1]){
-                focusedSpan.nextSibling.setAttribute("class", "focused");
-                focusedSpan.removeAttribute("class", "focused");
-                wordInput.value = null;
-                i++;
-            }else if(word == wordInput.value && word == words[words.length - 1]){
-                focusedSpan.removeAttribute("class", "focused");
-                wordInput.value = null;
-                clearInterval(timer);
-                wordsContainer.innerText = `${(words.length * 60 / interval).toFixed()} WPM`;
-                interval = 0;
-                i++;
-            }
-        });
+        let word = words[i];
+        const focusedSpan = document.querySelector(".focused");
+        if(word == wordInput.value && word != words[words.length - 1]){
+            focusedSpan.nextSibling.setAttribute("class", "focused");
+            focusedSpan.removeAttribute("class", "focused");
+            wordInput.value = null;
+            i++;
+        }else if(word == wordInput.value && word == words[words.length - 1]){
+            focusedSpan.removeAttribute("class", "focused");
+            wordInput.value = null;
+            clearInterval(timer);
+            wordsContainer.innerText = `${(words.length * 60 / interval).toFixed()} WPM`;
+            interval = 0;
+            i++;
+        }
     });
 }
 
@@ -71,23 +69,21 @@ const getQuote = async () => {
     let timer = setInterval(startTimer, 1000);
     let i = 0;
     wordInput.addEventListener("input", () => {
-        words.forEach(() => {
-            let word = words[i];
-            const focusedSpan = document.querySelector(".focused");
-            if(word == wordInput.value && word != words[words.length - 1]){
-                focusedSpan.nextSibling.setAttribute("class", "focused");
-                focusedSpan.removeAttribute("class", "focused");
-                wordInput.value = null;
-                i++;
-            }else if(word == wordInput.value && word == words[words.length - 1]){
-                focusedSpan.removeAttribute("class", "focused");
-                wordInput.value = null;
-                clearInterval(timer);
-                wordsContainer.innerText = `${(words.length * 60 / interval).toFixed()} WPM`;
-                interval = 0;
-                i++;
-            }
-        });
+        let word = words[i];
+        const focusedSpan = document.querySelector(".focused");
+        if(word == wordInput.value && word != words[words.length - 1]){
+            focusedSpan.nextSibling.setAttribute("class", "focused");
+            focusedSpan.removeAttribute("class", "focused");
+            wordInput.value = null;
+            i++;
+        }else if(word == wordInput.value && word == words[words.length - 1]){
+            focusedSpan.removeAttribute("class", "focused");
+            wordInput.value = null;
+            clearInterval(timer);
+            wordsContainer.innerText = `${(words.length * 60 / interval).toFixed()} WPM`;
+            interval = 0;
+            i++;
+        }
     });
 }
 
