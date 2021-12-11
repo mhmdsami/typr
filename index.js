@@ -13,19 +13,7 @@ const startTimer = () => {
     ++interval;
 };
 
-const getWords = async count => {
-    const res = await fetch(wordsAPI(count));
-    const words = await res.json();
-    wordsContainer.innerText = null;
-    words.forEach((word, index) => {
-        const wordSpan = document.createElement("span");
-        wordSpan.innerText = word;
-        if(index == 0){
-            wordSpan.setAttribute("class", "focused")
-        }
-        wordsContainer.appendChild(wordSpan);
-    });
-
+function calcWPM(words){
     let timer = setInterval(startTimer, 1000);
     let i = 0;
     wordInput.addEventListener("input", () => {
@@ -47,6 +35,22 @@ const getWords = async count => {
     });
 }
 
+const getWords = async count => {
+    const res = await fetch(wordsAPI(count));
+    const words = await res.json();
+    wordsContainer.innerText = null;
+    words.forEach((word, index) => {
+        const wordSpan = document.createElement("span");
+        wordSpan.innerText = word;
+        if(index == 0){
+            wordSpan.setAttribute("class", "focused")
+        }
+        wordsContainer.appendChild(wordSpan);
+    });
+    
+    calcWPM(words);
+}
+
 const getQuote = async () => {
     const res = await fetch(quoteAPI);
     const data = await res.json();
@@ -62,25 +66,7 @@ const getQuote = async () => {
         wordsContainer.appendChild(wordSpan);
     });
 
-    let timer = setInterval(startTimer, 1000);
-    let i = 0;
-    wordInput.addEventListener("input", () => {
-        let word = words[i];
-        const focusedSpan = document.querySelector(".focused");
-        if(word == wordInput.value && word != words[words.length - 1]){
-            focusedSpan.nextSibling.setAttribute("class", "focused");
-            focusedSpan.removeAttribute("class", "focused");
-            wordInput.value = null;
-            i++;
-        }else if(word == wordInput.value && word == words[words.length - 1]){
-            focusedSpan.removeAttribute("class", "focused");
-            wordInput.value = null;
-            clearInterval(timer);
-            wordsContainer.innerText = `${(words.length * 60 / interval).toFixed()} WPM`;
-            interval = 0;
-            i++;
-        }
-    });
+    calcWPM(words);
 }
 
 
