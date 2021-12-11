@@ -17,7 +17,6 @@ const getWords = async count => {
     const res = await fetch(wordsAPI(count));
     const words = await res.json();
     wordsContainer.innerText = null;
-    let wordLength = 0;
     words.forEach((word, index) => {
         const wordSpan = document.createElement("span");
         wordSpan.innerText = word;
@@ -25,7 +24,6 @@ const getWords = async count => {
             wordSpan.setAttribute("class", "focused")
         }
         wordsContainer.appendChild(wordSpan);
-        wordLength += word.length;
     });
 
     let timer = setInterval(startTimer, 1000);
@@ -55,7 +53,6 @@ const getQuote = async () => {
     const quote = data["content"];
     const words = quote.split(" ");
     wordsContainer.innerText = null;
-    let wordLength = 0;
     words.forEach( (word, index) => {
         const wordSpan = document.createElement("span");
         wordSpan.innerText = word;
@@ -63,7 +60,6 @@ const getQuote = async () => {
             wordSpan.setAttribute("class", "focused")
         }
         wordsContainer.appendChild(wordSpan);
-        wordLength += word.length;
     });
 
     let timer = setInterval(startTimer, 1000);
