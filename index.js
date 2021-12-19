@@ -7,14 +7,8 @@ const quoteStartBtn = document.querySelector(".quote-start-btn");
 const wordsAPI = count => (`https://random-word-api.herokuapp.com/word?number=${count}`);
 const quoteAPI = 'https://api.quotable.io/random';
 
-let interval = 0;
-
-const startTimer = () => {
-    ++interval;
-};
-
 function calcWPM(words){
-    let timer = setInterval(startTimer, 1000);
+    let startTime = Date.now();
     let i = 0;
     wordInput.addEventListener("input", () => {
         let word = words[i];
@@ -25,11 +19,10 @@ function calcWPM(words){
             wordInput.value = null;
             i++;
         }else if(word == wordInput.value && word == words[words.length - 1]){
+            let endTime = Date.now();
             focusedSpan.removeAttribute("class", "focused");
             wordInput.value = null;
-            clearInterval(timer);
-            wordsContainer.innerText = `${(words.length * 60 / interval).toFixed()} WPM`;
-            interval = 0;
+            wordsContainer.innerText = `${(words.length * 60000 / (endTime - startTime)).toFixed()} WPM`;
             i++;
         }
     });
