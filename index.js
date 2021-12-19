@@ -43,7 +43,7 @@ const getWords = async count => {
         const wordSpan = document.createElement("span");
         wordSpan.innerText = word;
         if(index == 0){
-            wordSpan.setAttribute("class", "focused")
+            wordSpan.setAttribute("class", "focused");
         }
         wordsContainer.appendChild(wordSpan);
     });
