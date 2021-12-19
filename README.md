@@ -7,4 +7,4 @@
 
 ### Todo
 - [ ] `Enter`to clear the textbox and move to next word
-- [ ] Implement timer with `Date()`
+- [x] Implement timer with `Date()`
