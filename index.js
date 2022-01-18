@@ -13,7 +13,7 @@ function calcWPM(words){
     wordInput.addEventListener("input", () => {
         let word = words[i];
         const focusedSpan = document.querySelector(".focused");
-        if(word == wordInput.value && word != words[words.length - 1]){
+        if(`${word} ` == wordInput.value && word != words[words.length - 1]){
             focusedSpan.nextSibling.setAttribute("class", "focused");
             focusedSpan.removeAttribute("class", "focused");
             wordInput.value = null;
