@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 * {
   background-color: #212121;
@@ -52,11 +52,9 @@ nav li a:hover {
   background-color: #0b424e;
 }
 
-nav li a span {
+.selected {
   color: #51c4d3;
   background-color: #0b424e;
-  border-radius: 10px;
-  padding: 0.5em;
 }
 
 .container {
